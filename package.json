@@ -2,20 +2,27 @@
   "name": "autocad-lisp-snippets",
   "displayName": "AutoCAD Lisp Snippets",
   "description": "A lightweight VS Code extension providing useful AutoCAD Lisp code snippets for faster development. Includes header templates, comment blocks, and common function patterns.",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.108.1"
   },
   "categories": [
     "Snippets"
   ],
-  "publisher": "Ferdi Jafar - Civil Tech Source",
+  "publisher": "CivilTechSource",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/CivilTechSource/AutoCAD-Lisp-Snippets.git"
   },
   "contributes": {
+    "languages": [
+      {
+        "id": "lisp",
+        "aliases": ["AutoCAD Lisp", "autolisp", "lisp"],
+        "extensions": [".lsp", ".lisp", ".fas"]
+      }
+    ],
     "snippets": [
       {
         "language": "lisp",
