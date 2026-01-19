@@ -1,0 +1,71 @@
+{
+  "AutoCAD Lisp Header": {
+    "prefix": "lisph",
+    "body": [
+      ";;------------------=={ ${1:Function Name} }==-------------------;;",
+      ";;                                                                      ;;",
+      ";;  ${2:Brief description of what this function does}                   ;;",
+      ";;                                                                      ;;",
+      ";;----------------------------------------------------------------------;;",
+      ";;  Author:  Ferdi Jafar - Civil Tech Source                           ;;",
+      ";;----------------------------------------------------------------------;;",
+      ";;  Version 1.0    -    ${3:Date}                                       ;;",
+      ";;                                                                      ;;",
+      ";;  ${4:Release notes}                                                  ;;",
+      ";;----------------------------------------------------------------------;;",
+      "",
+      "",
+      "",
+      "$0"
+    ],
+    "description": "Insert AutoCAD Lisp function header template"
+  },
+  "AutoCAD Lisp Comment Block": {
+    "prefix": "lispc",
+    "body": [
+      ";;                                                                      ;;",
+      ";;  ${1:Comment text here}                                             ;;",
+      ";;                                                                      ;;",
+      "$0"
+    ],
+    "description": "Insert AutoCAD Lisp comment block"
+  },
+  "AutoCAD Lisp Version Section": {
+    "prefix": "lispv",
+    "body": [
+      ";;----------------------------------------------------------------------;;",
+      ";;                   Version ${1:X.X}    -    ${2:Date}",
+      ";;",
+      ";;  ${3:Release notes}                                                  ;;",
+      ";;----------------------------------------------------------------------;;",
+      "",
+      "",
+      "",
+      "$0"
+    ],
+    "description": "Insert AutoCAD Lisp version section"
+  },
+  "Layer Search and Create Function": {
+    "prefix": "fun-layersearch&add",
+    "body": [
+      "(defun ${1:layer-search-create} (layer-name ${2:color} ${3:linetype} / )",
+      "  \"Function to search for a layer and create it if not found\"",
+      "  (if (tblsearch \"LAYER\" layer-name)",
+      "    (progn",
+      "      (princ (strcat \"\\nLayer '\" layer-name \"' already exists.\"))",
+      "      layer-name",
+      "    )",
+      "    (progn",
+      "      (command \"_LAYER\" \"_NEW\" layer-name",
+      "               \"_COLOR\" ${2:color} layer-name",
+      "               \"_LTYPE\" ${3:linetype} layer-name \"\")",
+      "      (princ (strcat \"\\nLayer '\" layer-name \"' created.\"))",
+      "      layer-name",
+      "    )",
+      "  )",
+      ")",
+      "$0"
+    ],
+    "description": "Insert function to search for layer and create if not found"
+  }
+}
