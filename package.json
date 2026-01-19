@@ -2,7 +2,7 @@
   "name": "autocad-lisp-snippets",
   "displayName": "AutoCAD Lisp Snippets",
   "description": "A lightweight VS Code extension providing useful AutoCAD Lisp code snippets for faster development. Includes header templates, comment blocks, and common function patterns.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "engines": {
     "vscode": "^1.108.1"
   },
