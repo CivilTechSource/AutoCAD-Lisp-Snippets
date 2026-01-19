@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/AutoCAD-Lisp-VSCode-Snippets"
+    "url": "https://github.com/CivilTechSource/AutoCAD-Lisp-Snippets.git"
   },
   "contributes": {
     "snippets": [
