@@ -5,6 +5,39 @@ All notable changes to the AutoCAD Lisp Snippets extension will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5] - 2026-01-20
+
+### Fixed
+- **LANGUAGE DETECTION FIX**: Added support for "autolisp" language in addition to "lisp"
+- Snippets now work automatically in AutoCAD Lisp files without manual language mode setting
+- Fixed issue where .lsp files detected as "autolisp" wouldn't trigger snippets
+
+### Added
+- Dual language support: snippets work for both "autolisp" and "lisp" language modes
+- Improved compatibility with different VS Code AutoCAD Lisp extensions
+
+### Technical
+- Added "autolisp" language contribution to package.json
+- Maintained backward compatibility with "lisp" language detection
+- Automatic snippet activation in AutoCAD Lisp files
+
+## [1.0.4] - 2026-01-20
+
+### Fixed
+- **SYNTAX HIGHLIGHTING FIX**: Removed language definition to prevent conflicts with other Lisp extensions
+- Extension now focuses purely on snippets without interfering with existing syntax highlighting
+- Eliminates potential conflicts with specialized AutoCAD Lisp syntax extensions
+
+### Changed
+- Removed file extension associations (.lsp, .lisp, .fas) from extension
+- Users can manually set language mode to "lisp" when needed for snippet activation
+- Cleaner, more focused extension architecture
+
+### Technical
+- Simplified package.json by removing language contributions
+- Extension now works alongside any existing Lisp syntax highlighting extensions
+- Reduced potential for conflicts and improved compatibility
+
 ## [1.0.3] - 2026-01-19
 
 ### Added
