@@ -1,0 +1,83 @@
+{
+  "Create Layer Function": {
+    "prefix": "lay-create",
+    "body": [
+      "(defun ${1:create-layer} (${2:layer_name} ${3:color} ${4:linetype} / layer-obj)",
+      "  \"Create a new layer with specified properties\"",
+      "  (if (not (tblsearch \"LAYER\" ${2:layer_name}))",
+      "    (progn",
+      "      (setq layer-obj (vla-add (vla-get-layers (vla-get-activedocument (vlax-get-acad-object))) ${2:layer_name}))",
+      "      (vla-put-color layer-obj ${3:color})",
+      "      (vla-put-linetype layer-obj ${4:linetype})",
+      "      (princ (strcat \"\\nLayer '\" ${2:layer_name} \"' created.\"))",
+      "      ${2:layer_name}",
+      "    )",
+      "    (progn",
+      "      (princ (strcat \"\\nLayer '\" ${2:layer_name} \"' already exists.\"))",
+      "      ${2:layer_name}",
+      "    )",
+      "  )",
+      ")"
+    ],
+    "description": "Create a new layer with color and linetype properties",
+    "scope": "autolisp"
+  },
+
+  "Set Current Layer": {
+    "prefix": "lay-set-current",
+    "body": [
+      "(defun ${1:set-current-layer} (${2:layer_name} / )",
+      "  \"Set the current layer\"",
+      "  (if (tblsearch \"LAYER\" ${2:layer_name})",
+      "    (progn",
+      "      (setvar \"CLAYER\" ${2:layer_name})",
+      "      (princ (strcat \"\\nCurrent layer set to: \" ${2:layer_name}))",
+      "      ${2:layer_name}",
+      "    )",
+      "    (progn",
+      "      (princ (strcat \"\\nLayer '\" ${2:layer_name} \"' does not exist.\"))",
+      "      nil",
+      "    )",
+      "  )",
+      ")"
+    ],
+    "description": "Set the current drawing layer",
+    "scope": "autolisp"
+  },
+
+  "Freeze Layer": {
+    "prefix": "lay-freeze",
+    "body": [
+      "(defun ${1:freeze-layer} (${2:layer_name} / )",
+      "  \"Freeze a layer\"",
+      "  (if (tblsearch \"LAYER\" ${2:layer_name})",
+      "    (progn",
+      "      (command \"_LAYER\" \"_FREEZE\" ${2:layer_name} \"\")",
+      "      (princ (strcat \"\\nLayer '\" ${2:layer_name} \"' frozen.\"))",
+      "    )",
+      "    (princ (strcat \"\\nLayer '\" ${2:layer_name} \"' does not exist.\"))",
+      "  )",
+      ")"
+    ],
+    "description": "Freeze a specified layer",
+    "scope": "autolisp"
+  },
+
+  "Get All Layer Names": {
+    "prefix": "lay-list",
+    "body": [
+      "(defun ${1:get-layer-list} ( / layer-list layer-name)",
+      "  \"Get list of all layer names in drawing\"",
+      "  (setq layer-list '())",
+      "  (setq layer-name (tblnext \"LAYER\" T))",
+      "  (while layer-name",
+      "    (setq layer-list (cons (cdr (assoc 2 layer-name)) layer-list))",
+      "    (setq layer-name (tblnext \"LAYER\"))",
+      "  )",
+      "  (reverse layer-list)",
+      ")"
+    ],
+    "description": "Get a list of all layer names in the drawing",
+    "scope": "autolisp"
+  }
+}

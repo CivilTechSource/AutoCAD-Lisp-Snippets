@@ -5,6 +5,47 @@ All notable changes to the AutoCAD Lisp Snippets extension will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# Change Log
+
+All notable changes to the AutoCAD Lisp Snippets extension will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.1.0] - 2026-01-20
+
+### Added
+- **COMPLETE CATEGORY SYSTEM**: Full snippet organization with 8 categories and 35+ snippets
+- **DCL Support**: Added Dialog Control Language (DCL) snippets for creating AutoCAD dialogs
+- **Layer Management**: Complete layer functions (`lay-create`, `lay-set-current`, `lay-freeze`, `lay-list`)
+- **Drawing Functions**: Drawing commands (`draw-line`, `draw-circle`, `draw-rect`, `draw-text`, `draw-pline`)
+- **Input/Output**: User input validation (`io-point`, `io-string`, `io-int`, `io-real`, `io-distance`, `io-angle`, `io-entity`)
+- **Utilities**: Common utility functions (`util-distance`, `util-deg2rad`, `util-rad2deg`, `util-string`, `util-list`, `util-error`)
+- **Multiple snippet files**: Organized snippets into 8 category-specific files
+
+### Changed
+- **BREAKING**: Snippet prefixes updated to category-based system:
+  - `lisph` → `doc-header` (documentation header)
+  - `lispc` → `doc-comment` (comment block)
+  - `lispv` → `doc-version` (version header)
+  - `lispf` → `fun-template` (function template)
+  - `lisps` → `sec-header` (section header)
+- **File Structure**: Split single snippet file into 8 category files:
+  - `documentation.code-snippets` (doc-* prefixes)
+  - `functions.code-snippets` (fun-* prefixes)
+  - `sections.code-snippets` (sec-* prefixes)
+  - `layers.code-snippets` (lay-* prefixes)
+  - `drawing.code-snippets` (draw-* prefixes)
+  - `input-output.code-snippets` (io-* prefixes)
+  - `utilities.code-snippets` (util-* prefixes)
+  - `dcl.code-snippets` (dcl-* prefixes)
+- **Updated Documentation**: SNIPPET-CREATION-GUIDE.md completely updated with new naming conventions and all available snippets
+
+### Technical
+- Updated package.json to reference all 8 snippet files
+- Maintained dual language support (autolisp/lisp) for all categories
+- Comprehensive snippet library covering all major AutoCAD Lisp development areas
+
 ## [1.0.5] - 2026-01-20
 
 ### Fixed

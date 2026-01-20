@@ -1,6 +1,6 @@
 {
-  "Lisp Header": {
-    "prefix": "lisph",
+  "AutoCAD Lisp Header": {
+    "prefix": "doc-header",
     "body": [
       ";;------------------=={ ${1:Function Name} }==-------------------;;",
       ";;                                                                      ;;",
@@ -18,12 +18,12 @@
       "    ${0}",
       ")"
     ],
-    "description": "Insert standard Lisp header with function template",
+    "description": "Insert standard AutoCAD Lisp header with function template",
     "scope": "autolisp"
   },
 
-  "Lisp Version Header": {
-    "prefix": "lispv",
+  "AutoCAD Lisp Version Header": {
+    "prefix": "doc-version",
     "body": [
       ";;----------------------------------------------------------------------;;",
       ";;                   Version X.X    -    ${1:Date}                     ;;",
@@ -31,44 +31,19 @@
       ";;----------------------------------------------------------------------;;",
       ""
     ],
-    "description": "Insert standard Lisp header Version Section template",
+    "description": "Insert standard AutoCAD Lisp version section template",
     "scope": "autolisp"
   },
 
-  "Lisp Section Header": {
-    "prefix": "lisps",
-    "body": [
-      ";;----------------------------------------------------------------------;;",
-      ";;  ${1:Section Description}                                            ;;",
-      ";;----------------------------------------------------------------------;;",
-      ""
-    ],
-    "description": "Insert standard Lisp section header",
-    "scope": "autolisp"
-  },
-
-  "Lisp Comment Block": {
-    "prefix": "lispc",
+  "AutoCAD Lisp Comment Block": {
+    "prefix": "doc-comment",
     "body": [
       ";;                                                                      ;;",
       ";;  ${1:Comment text here}                                             ;;",
       ";;                                                                      ;;",
       ""
     ],
-    "description": "Insert standard Lisp comment block",
-    "scope": "autolisp"
-  },
-
-  "Basic Function Template": {
-    "prefix": "lispf",
-    "body": [
-      "(defun ${1:function-name} (${2:parameters} / ${3:local-variables})",
-      "  \"${4:Function description}\"",
-      "  ${5:;; Function body starts here}",
-      "  ${0}",
-      ")"
-    ],
-    "description": "Insert basic AutoCAD Lisp function template",
+    "description": "Insert standard AutoCAD Lisp comment block",
     "scope": "autolisp"
   }
 }

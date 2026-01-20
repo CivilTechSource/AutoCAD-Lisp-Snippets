@@ -1,0 +1,13 @@
+{
+  "AutoCAD Lisp Section Header": {
+    "prefix": "sec-header",
+    "body": [
+      ";;----------------------------------------------------------------------;;",
+      ";;  ${1:Section Description}                                            ;;",
+      ";;----------------------------------------------------------------------;;",
+      ""
+    ],
+    "description": "Insert standard AutoCAD Lisp section header",
+    "scope": "autolisp"
+  }
+}

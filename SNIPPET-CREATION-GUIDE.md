@@ -42,26 +42,113 @@ A comprehensive guide for contributors to create useful AutoCAD Lisp snippets fo
 - **`$0`**: Final cursor position
 - **`${n:name}`**: Tab-navigable placeholders
 
-## 🔧 AutoCAD Lisp Snippet Guidelines
+## � File Organization
+
+### **Snippet File Structure:**
+```
+snippets/
+├── documentation.code-snippets    # doc-* prefixes (headers, comments)
+├── functions.code-snippets        # fun-* prefixes (function templates)
+├── sections.code-snippets         # sec-* prefixes (section headers)
+├── layers.code-snippets           # lay-* prefixes (layer management)
+├── drawing.code-snippets          # draw-* prefixes (drawing commands)
+├── input-output.code-snippets     # io-* prefixes (user input/output)
+├── utilities.code-snippets        # util-* prefixes (utility functions)
+└── dcl.code-snippets             # dcl-* prefixes (dialog controls)
+```
+
+### **Adding New Snippets:**
+
+1. **Choose the appropriate file** based on prefix category
+2. **Follow naming conventions** for your prefix
+3. **Add to package.json** if creating a new category file
+4. **Update this guide** if introducing new prefix patterns
+
+### **Creating New Categories:**
+When adding a new category:
+1. Create new `.code-snippets` file in `/snippets/` folder
+2. Add entries to `package.json` contributes section for both `autolisp` and `lisp` languages
+3. Document the new prefix pattern in this guide
+
 
 ### **Naming Conventions**
 
-#### **Prefixes:**
-- **`lisp-`**: General AutoCAD Lisp utilities
-- **`fun-`**: Function templates and complete functions
-- **`cmd-`**: Command functions (C:COMMAND-NAME format)
-- **`ent-`**: Entity manipulation snippets
-- **`sel-`**: Selection set operations
-- **`layer-`**: Layer management functions
-- **`draw-`**: Drawing creation functions
-- **`util-`**: Utility functions (math, string manipulation)
+### **Naming Conventions**
+
+#### **Category-Based Prefixes:**
+Our snippets are organized into categories with specific prefix patterns:
+
+- **`doc-`**: Documentation templates (headers, comments, version blocks)
+- **`fun-`**: Function templates and complete functions  
+- **`sec-`**: Section headers and dividers
+- **`lay-`**: Layer management functions
+- **`draw-`**: Drawing creation functions (lines, circles, text, etc.)
+- **`io-`**: Input/Output operations (user input, entity selection)
+- **`util-`**: Utility functions (math, string manipulation, error handling)
+- **`dcl-`**: Dialog Control Language (DCL) components and dialogs
+
+#### **Current Available Snippets:**
+
+**Documentation (`doc-*`):**
+- **`doc-header`**: Standard AutoCAD Lisp header with function template
+- **`doc-version`**: Version section for documentation
+- **`doc-comment`**: Formatted comment block
+
+**Functions (`fun-*`):**
+- **`fun-template`**: Basic function template
+- **`fun-layer-check`**: Layer existence check and creation function
+
+**Sections (`sec-*`):**
+- **`sec-header`**: Section divider header
+
+**Layers (`lay-*`):**
+- **`lay-create`**: Create layer with properties
+- **`lay-set-current`**: Set current drawing layer
+- **`lay-freeze`**: Freeze a layer
+- **`lay-list`**: Get all layer names
+
+**Drawing (`draw-*`):**
+- **`draw-line`**: Draw line between two points
+- **`draw-circle`**: Draw circle with center and radius
+- **`draw-rect`**: Draw rectangle with corner points
+- **`draw-text`**: Draw single-line text
+- **`draw-pline`**: Draw polyline through points
+
+**Input/Output (`io-*`):**
+- **`io-point`**: Get point input with validation
+- **`io-string`**: Get string input with validation
+- **`io-int`**: Get integer input
+- **`io-real`**: Get real number input
+- **`io-distance`**: Get distance input
+- **`io-angle`**: Get angle input
+- **`io-entity`**: Get entity selection
+
+**Utilities (`util-*`):**
+- **`util-distance`**: Calculate distance between points
+- **`util-deg2rad`**: Convert degrees to radians
+- **`util-rad2deg`**: Convert radians to degrees
+- **`util-string`**: String utility functions
+- **`util-list`**: List utility functions
+- **`util-error`**: Error handler template
+
+**DCL (`dcl-*`):**
+- **`dcl-dialog`**: Basic DCL dialog template
+- **`dcl-edit`**: Edit box control
+- **`dcl-button`**: Button control
+- **`dcl-list`**: List box control
+- **`dcl-radio`**: Radio button control
+- **`dcl-check`**: Checkbox control
+- **`dcl-load`**: Load and show dialog function
+- **`dcl-row`**: Row layout container
+- **`dcl-column`**: Column layout container
 
 #### **Examples:**
 ```json
-"prefix": ["fun-distance", "distance-calc"]     // Function snippets
-"prefix": ["cmd-layerlist", "list-layers"]      // Command snippets
-"prefix": ["ent-modify", "modify-entity"]       // Entity operations
-"prefix": ["util-radians", "deg-to-rad"]        // Utility functions
+"prefix": "doc-header"           // Documentation header template
+"prefix": "fun-template"         // Basic function structure
+"prefix": "lay-create"           // Layer creation function
+"prefix": "ent-modify"           // Entity modification snippet
+"prefix": "util-radians"         // Utility function for angle conversion
 ```
 
 ### **Code Structure Standards**

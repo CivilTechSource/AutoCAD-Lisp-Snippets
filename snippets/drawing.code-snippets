@@ -1,0 +1,95 @@
+{
+  "Draw Line": {
+    "prefix": "draw-line",
+    "body": [
+      "(defun ${1:draw-line} (${2:start_point} ${3:end_point} / )",
+      "  \"Draw a line between two points\"",
+      "  (if (and ${2:start_point} ${3:end_point})",
+      "    (progn",
+      "      (command \"_LINE\" ${2:start_point} ${3:end_point} \"\")",
+      "      (princ \"\\nLine drawn.\")",
+      "    )",
+      "    (princ \"\\nInvalid points provided.\")",
+      "  )",
+      ")"
+    ],
+    "description": "Draw a line between two points",
+    "scope": "autolisp"
+  },
+
+  "Draw Circle": {
+    "prefix": "draw-circle",
+    "body": [
+      "(defun ${1:draw-circle} (${2:center_point} ${3:radius} / )",
+      "  \"Draw a circle with specified center and radius\"",
+      "  (if (and ${2:center_point} ${3:radius} (> ${3:radius} 0))",
+      "    (progn",
+      "      (command \"_CIRCLE\" ${2:center_point} ${3:radius})",
+      "      (princ \"\\nCircle drawn.\")",
+      "    )",
+      "    (princ \"\\nInvalid center point or radius.\")",
+      "  )",
+      ")"
+    ],
+    "description": "Draw a circle with center point and radius",
+    "scope": "autolisp"
+  },
+
+  "Draw Rectangle": {
+    "prefix": "draw-rect",
+    "body": [
+      "(defun ${1:draw-rectangle} (${2:corner1} ${3:corner2} / )",
+      "  \"Draw a rectangle using two opposite corners\"",
+      "  (if (and ${2:corner1} ${3:corner2})",
+      "    (progn",
+      "      (command \"_RECTANGLE\" ${2:corner1} ${3:corner2})",
+      "      (princ \"\\nRectangle drawn.\")",
+      "    )",
+      "    (princ \"\\nInvalid corner points provided.\")",
+      "  )",
+      ")"
+    ],
+    "description": "Draw a rectangle using two corner points",
+    "scope": "autolisp"
+  },
+
+  "Draw Text": {
+    "prefix": "draw-text",
+    "body": [
+      "(defun ${1:draw-text} (${2:insertion_point} ${3:text_string} ${4:height} / )",
+      "  \"Draw single-line text at specified point\"",
+      "  (if (and ${2:insertion_point} ${3:text_string} ${4:height})",
+      "    (progn",
+      "      (command \"_TEXT\" ${2:insertion_point} ${4:height} \"${5:0}\" ${3:text_string})",
+      "      (princ \"\\nText drawn.\")",
+      "    )",
+      "    (princ \"\\nInvalid parameters provided.\")",
+      "  )",
+      ")"
+    ],
+    "description": "Draw single-line text at insertion point",
+    "scope": "autolisp"
+  },
+
+  "Draw Polyline": {
+    "prefix": "draw-pline",
+    "body": [
+      "(defun ${1:draw-polyline} (${2:point_list} / pt)",
+      "  \"Draw a polyline through a list of points\"",
+      "  (if (and ${2:point_list} (> (length ${2:point_list}) 1))",
+      "    (progn",
+      "      (command \"_PLINE\")",
+      "      (foreach pt ${2:point_list}",
+      "        (command pt)",
+      "      )",
+      "      (command \"\")",
+      "      (princ \"\\nPolyline drawn.\")",
+      "    )",
+      "    (princ \"\\nInvalid point list provided.\")",
+      "  )",
+      ")"
+    ],
+    "description": "Draw a polyline through a list of points",
+    "scope": "autolisp"
+  }
+}

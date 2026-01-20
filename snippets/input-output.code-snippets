@@ -1,0 +1,115 @@
+{
+  "Get Point Input": {
+    "prefix": "io-point",
+    "body": [
+      "(setq ${1:point_var} (getpoint \"${2:Specify point}: \"))",
+      "(if ${1:point_var}",
+      "  (progn",
+      "    ${3:;; Process the point}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nNo point selected.\")",
+      ")"
+    ],
+    "description": "Get point input from user with error checking",
+    "scope": "autolisp"
+  },
+
+  "Get String Input": {
+    "prefix": "io-string",
+    "body": [
+      "(setq ${1:string_var} (getstring ${2:t} \"${3:Enter text}: \"))",
+      "(if (and ${1:string_var} (/= ${1:string_var} \"\"))",
+      "  (progn",
+      "    ${4:;; Process the string}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nNo text entered.\")",
+      ")"
+    ],
+    "description": "Get string input from user with validation",
+    "scope": "autolisp"
+  },
+
+  "Get Integer Input": {
+    "prefix": "io-int",
+    "body": [
+      "(setq ${1:int_var} (getint \"${2:Enter integer}: \"))",
+      "(if ${1:int_var}",
+      "  (progn",
+      "    ${3:;; Process the integer}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nInvalid integer entered.\")",
+      ")"
+    ],
+    "description": "Get integer input from user with validation",
+    "scope": "autolisp"
+  },
+
+  "Get Real Number Input": {
+    "prefix": "io-real",
+    "body": [
+      "(setq ${1:real_var} (getreal \"${2:Enter number}: \"))",
+      "(if ${1:real_var}",
+      "  (progn",
+      "    ${3:;; Process the number}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nInvalid number entered.\")",
+      ")"
+    ],
+    "description": "Get real number input from user with validation",
+    "scope": "autolisp"
+  },
+
+  "Get Distance Input": {
+    "prefix": "io-distance",
+    "body": [
+      "(setq ${1:dist_var} (getdist \"${2:Specify distance}: \"))",
+      "(if ${1:dist_var}",
+      "  (progn",
+      "    ${3:;; Process the distance}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nInvalid distance entered.\")",
+      ")"
+    ],
+    "description": "Get distance input from user with validation",
+    "scope": "autolisp"
+  },
+
+  "Get Angle Input": {
+    "prefix": "io-angle",
+    "body": [
+      "(setq ${1:angle_var} (getangle \"${2:Specify angle}: \"))",
+      "(if ${1:angle_var}",
+      "  (progn",
+      "    ${3:;; Process the angle}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nInvalid angle entered.\")",
+      ")"
+    ],
+    "description": "Get angle input from user with validation",
+    "scope": "autolisp"
+  },
+
+  "Get Entity Selection": {
+    "prefix": "io-entity",
+    "body": [
+      "(setq ${1:entity_selection} (entsel \"${2:Select entity}: \"))",
+      "(if ${1:entity_selection}",
+      "  (progn",
+      "    (setq ${3:entity_name} (car ${1:entity_selection}))",
+      "    (setq ${4:entity_data} (entget ${3:entity_name}))",
+      "    ${5:;; Process entity}",
+      "    ${0}",
+      "  )",
+      "  (princ \"\\nNo entity selected.\")",
+      ")"
+    ],
+    "description": "Get entity selection from user with processing",
+    "scope": "autolisp"
+  }
+}

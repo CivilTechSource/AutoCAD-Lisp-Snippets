@@ -2,7 +2,7 @@
   "name": "autocad-lisp-snippets",
   "displayName": "AutoCAD Lisp Snippets",
   "description": "A lightweight VS Code extension providing useful AutoCAD Lisp code snippets for faster development. Includes header templates, comment blocks, and common function patterns.",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.108.1"
   },
@@ -19,11 +19,67 @@
     "snippets": [
       {
         "language": "autolisp",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/documentation.code-snippets"
       },
       {
         "language": "lisp",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/documentation.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/functions.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/functions.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/sections.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/sections.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/layers.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/layers.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/drawing.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/drawing.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/input-output.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/input-output.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/utilities.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/utilities.code-snippets"
+      },
+      {
+        "language": "autolisp",
+        "path": "./snippets/dcl.code-snippets"
+      },
+      {
+        "language": "lisp",
+        "path": "./snippets/dcl.code-snippets"
       }
     ]
   }

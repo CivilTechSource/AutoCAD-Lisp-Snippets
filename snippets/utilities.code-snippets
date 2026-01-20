@@ -1,0 +1,113 @@
+{
+  "Calculate Distance": {
+    "prefix": "util-distance",
+    "body": [
+      "(defun ${1:calc-distance} (${2:point1} ${3:point2} / )",
+      "  \"Calculate distance between two points\"",
+      "  (if (and ${2:point1} ${3:point2})",
+      "    (distance ${2:point1} ${3:point2})",
+      "    nil",
+      "  )",
+      ")"
+    ],
+    "description": "Calculate distance between two points",
+    "scope": "autolisp"
+  },
+
+  "Degrees to Radians": {
+    "prefix": "util-deg2rad",
+    "body": [
+      "(defun ${1:deg-to-rad} (${2:degrees} / )",
+      "  \"Convert degrees to radians\"",
+      "  (if ${2:degrees}",
+      "    (/ (* ${2:degrees} pi) 180.0)",
+      "    nil",
+      "  )",
+      ")"
+    ],
+    "description": "Convert degrees to radians",
+    "scope": "autolisp"
+  },
+
+  "Radians to Degrees": {
+    "prefix": "util-rad2deg",
+    "body": [
+      "(defun ${1:rad-to-deg} (${2:radians} / )",
+      "  \"Convert radians to degrees\"",
+      "  (if ${2:radians}",
+      "    (/ (* ${2:radians} 180.0) pi)",
+      "    nil",
+      "  )",
+      ")"
+    ],
+    "description": "Convert radians to degrees",
+    "scope": "autolisp"
+  },
+
+  "String Utilities": {
+    "prefix": "util-string",
+    "body": [
+      "(defun ${1:string-utils} ( / )",
+      "  \"String utility functions\"",
+      "  ;; Convert to uppercase",
+      "  (defun ${2:str-upper} (str)",
+      "    (strcase str)",
+      "  )",
+      "  ;; Convert to lowercase", 
+      "  (defun ${3:str-lower} (str)",
+      "    (strcase str T)",
+      "  )",
+      "  ;; Check if string is empty",
+      "  (defun ${4:str-empty-p} (str)",
+      "    (or (null str) (= str \"\"))",
+      "  )",
+      "  ${0}",
+      ")"
+    ],
+    "description": "Common string utility functions",
+    "scope": "autolisp"
+  },
+
+  "List Utilities": {
+    "prefix": "util-list",
+    "body": [
+      "(defun ${1:list-utils} ( / )",
+      "  \"List utility functions\"",
+      "  ;; Get last item in list",
+      "  (defun ${2:list-last} (lst)",
+      "    (last lst)",
+      "  )",
+      "  ;; Remove duplicates from list",
+      "  (defun ${3:list-unique} (lst / result item)",
+      "    (setq result '())",
+      "    (foreach item lst",
+      "      (if (not (member item result))",
+      "        (setq result (cons item result))",
+      "      )",
+      "    )",
+      "    (reverse result)",
+      "  )",
+      "  ${0}",
+      ")"
+    ],
+    "description": "Common list utility functions",
+    "scope": "autolisp"
+  },
+
+  "Error Handler Template": {
+    "prefix": "util-error",
+    "body": [
+      "(defun *error* (${1:msg})",
+      "  \"Standard error handling function\"",
+      "  (if (not (member ${1:msg} '(\"Function cancelled\" \"quit / exit abort\")))",
+      "    (princ (strcat \"\\nError: \" ${1:msg}))",
+      "  )",
+      "  ${2:;; Restore system variables}",
+      "  ${3:;; (setvar \"CMDECHO\" old_cmdecho)}",
+      "  (princ)",
+      ")"
+    ],
+    "description": "Standard error handling function template",
+    "scope": "autolisp"
+  }
+}

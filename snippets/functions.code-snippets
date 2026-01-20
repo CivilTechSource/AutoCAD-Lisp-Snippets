@@ -1,0 +1,34 @@
+{
+  "AutoCAD Lisp Function Template": {
+    "prefix": "fun-template",
+    "body": [
+      "(defun ${1:function-name} (${2:parameters} / ${3:local-variables})",
+      "  \"${4:Function description}\"",
+      "  ${5:;; Function body starts here}",
+      "  ${0}",
+      ")"
+    ],
+    "description": "Insert basic AutoCAD Lisp function template",
+    "scope": "autolisp"
+  },
+
+  "Layer Search and Add Function": {
+    "prefix": "fun-layer-check",
+    "body": [
+      "(defun ${1:layer-check} (layername / layer-obj)",
+      "  \"Check if layer exists, create if it doesn't\"",
+      "  (if (not (tblsearch \"LAYER\" layername))",
+      "    (progn",
+      "      (setq layer-obj (vla-add (vla-get-layers (vla-get-activedocument (vlax-get-acad-object))) layername))",
+      "      (vla-put-color layer-obj ${2:7}) ; Default color (7 = white/black)",
+      "      (princ (strcat \"\\nLayer '\" layername \"' created.\"))",
+      "    )",
+      "    (princ (strcat \"\\nLayer '\" layername \"' already exists.\"))",
+      "  )",
+      "  layername",
+      ")"
+    ],
+    "description": "Function to check if a layer exists and create it if it doesn't",
+    "scope": "autolisp"
+  }
+}

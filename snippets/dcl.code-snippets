@@ -1,0 +1,163 @@
+{
+  "Basic DCL Dialog": {
+    "prefix": "dcl-dialog",
+    "body": [
+      "${1:dialog_name} : dialog {",
+      "  label = \"${2:Dialog Title}\";",
+      "  key = \"${3:dlg_main}\";",
+      "  width = ${4:40};",
+      "  height = ${5:20};",
+      "  ",
+      "  : text {",
+      "    label = \"${6:Enter information:}\";",
+      "  }",
+      "  ",
+      "  : edit_box {",
+      "    label = \"${7:Input}:\";",
+      "    key = \"${8:user_input}\";",
+      "    width = 30;",
+      "  }",
+      "  ",
+      "  : row {",
+      "    : button {",
+      "      label = \"OK\";",
+      "      key = \"accept\";",
+      "      is_default = true;",
+      "    }",
+      "    : button {",
+      "      label = \"Cancel\"; ",
+      "      key = \"cancel\";",
+      "      is_cancel = true;",
+      "    }",
+      "  }",
+      "}${0}"
+    ],
+    "description": "Basic DCL dialog template with input field and OK/Cancel buttons",
+    "scope": "autolisp"
+  },
+
+  "DCL Edit Box": {
+    "prefix": "dcl-edit",
+    "body": [
+      ": edit_box {",
+      "  label = \"${1:Label}:\";",
+      "  key = \"${2:edit_key}\";",
+      "  width = ${3:20};",
+      "  ${4:edit_width = 10;}",
+      "  ${5:value = \"${6:default_value}\";}",
+      "}${0}"
+    ],
+    "description": "DCL edit box control",
+    "scope": "autolisp"
+  },
+
+  "DCL Button": {
+    "prefix": "dcl-button",
+    "body": [
+      ": button {",
+      "  label = \"${1:Button Text}\";",
+      "  key = \"${2:btn_key}\";",
+      "  ${3:width = 15;}",
+      "  ${4:is_default = true;}",
+      "}${0}"
+    ],
+    "description": "DCL button control",
+    "scope": "autolisp"
+  },
+
+  "DCL List Box": {
+    "prefix": "dcl-list",
+    "body": [
+      ": list_box {",
+      "  label = \"${1:Select Item}:\";",
+      "  key = \"${2:list_key}\";",
+      "  width = ${3:25};",
+      "  height = ${4:10};",
+      "  ${5:multiple_select = false;}",
+      "}${0}"
+    ],
+    "description": "DCL list box control",
+    "scope": "autolisp"
+  },
+
+  "DCL Radio Button": {
+    "prefix": "dcl-radio",
+    "body": [
+      ": radio_button {",
+      "  label = \"${1:Option Text}\";",
+      "  key = \"${2:radio_key}\";",
+      "  ${3:value = \"1\";}",
+      "}${0}"
+    ],
+    "description": "DCL radio button control",
+    "scope": "autolisp"
+  },
+
+  "DCL Checkbox": {
+    "prefix": "dcl-check",
+    "body": [
+      ": toggle {",
+      "  label = \"${1:Checkbox Text}\";",
+      "  key = \"${2:check_key}\";",
+      "  ${3:value = \"0\";}",
+      "}${0}"
+    ],
+    "description": "DCL checkbox (toggle) control",
+    "scope": "autolisp"
+  },
+
+  "DCL Load and Show Dialog": {
+    "prefix": "dcl-load",
+    "body": [
+      "(defun ${1:show-dialog} ( / dcl_id dialog_result)",
+      "  \"Load and display DCL dialog\"",
+      "  (setq dcl_id (load_dialog \"${2:dialog_file.dcl}\"))",
+      "  (if (not (new_dialog \"${3:dialog_name}\" dcl_id))",
+      "    (progn",
+      "      (alert \"Error: Could not load dialog.\")",
+      "      (exit)",
+      "    )",
+      "  )",
+      "  ",
+      "  ;; Set initial values",
+      "  ${4:(set_tile \"user_input\" \"default_value\")}",
+      "  ",
+      "  ;; Set up actions",
+      "  (action_tile \"accept\" \"(done_dialog 1)\")",
+      "  (action_tile \"cancel\" \"(done_dialog 0)\")",
+      "  ",
+      "  ;; Show dialog",
+      "  (setq dialog_result (start_dialog))",
+      "  (unload_dialog dcl_id)",
+      "  ",
+      "  dialog_result",
+      ")${0}"
+    ],
+    "description": "Load and display DCL dialog with basic setup",
+    "scope": "autolisp"
+  },
+
+  "DCL Row Layout": {
+    "prefix": "dcl-row",
+    "body": [
+      ": row {",
+      "  ${1:;; Row contents}",
+      "  ${0}",
+      "}"
+    ],
+    "description": "DCL row layout container",
+    "scope": "autolisp"
+  },
+
+  "DCL Column Layout": {
+    "prefix": "dcl-column",
+    "body": [
+      ": column {",
+      "  ${1:;; Column contents}",
+      "  ${0}",
+      "}"
+    ],
+    "description": "DCL column layout container",
+    "scope": "autolisp"
+  }
+}
