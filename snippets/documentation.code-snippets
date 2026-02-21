@@ -2,17 +2,17 @@
   "AutoCAD Lisp Header": {
     "prefix": "doc-header",
     "body": [
-      ";;------------------=={ ${1:Function Name} }==-------------------;;",
-      ";;                                                                      ;;",
-      ";;  ${2:Brief description of what this function does}                   ;;",
-      ";;                                                                      ;;",
-      ";;----------------------------------------------------------------------;;",
-      ";;  Author:  Ferdi Jafar - Civil Tech Source                           ;;",
-      ";;----------------------------------------------------------------------;;",
-      ";;  Version 1.0    -    ${3:Date}                                       ;;",
-      ";;                                                                      ;;",
-      ";;  ${4:Release notes}                                                  ;;",
-      ";;----------------------------------------------------------------------;;",
+      ";;------------------=={ ${1:Function Name} }==-------------------",
+      ";;                                                                      ",
+      ";;  ${2:Brief description of what this function does}                   ",
+      ";;                                                                      ",
+      ";;----------------------------------------------------------------------",
+      ";;  Author:  Ferdi Jafar - Civil Tech Source                           ",
+      ";;----------------------------------------------------------------------",
+      ";;  Version 1.0    -    ${3:Date}                                       ",
+      ";;                                                                      ",
+      ";;  ${4:Release notes}                                                  ",
+      ";;----------------------------------------------------------------------",
       "",
       "(defun c:${5:functionname} ( / )",
       "    ${0}",
@@ -25,10 +25,10 @@
   "AutoCAD Lisp Version Header": {
     "prefix": "doc-version",
     "body": [
-      ";;----------------------------------------------------------------------;;",
-      ";;                   Version X.X    -    ${1:Date}                     ;;",
-      ";;  ${2:Release notes}                                                  ;;",
-      ";;----------------------------------------------------------------------;;",
+      ";;----------------------------------------------------------------------",
+      ";;                   Version X.X    -    ${1:Date}                     ",
+      ";;  ${2:Release notes}                                                  ",
+      ";;----------------------------------------------------------------------",
       ""
     ],
     "description": "Insert standard AutoCAD Lisp version section template",
@@ -38,12 +38,26 @@
   "AutoCAD Lisp Comment Block": {
     "prefix": "doc-comment",
     "body": [
-      ";;                                                                      ;;",
-      ";;  ${1:Comment text here}                                             ;;",
-      ";;                                                                      ;;",
+      ";;                                                                      ",
+      ";;  ${1:Comment text here}                                             ",
+      ";;                                                                      ",
       ""
     ],
     "description": "Insert standard AutoCAD Lisp comment block",
     "scope": "autolisp"
+  },
+
+  "AutoCAD Lisp Section Header": {
+    "prefix": "doc-section",
+    "body": [
+      ";;----------------------------------------------------------------------",
+      ";;  ${1:Section Description}                                            ",
+      ";;----------------------------------------------------------------------",
+      ""
+    ],
+    "description": "Insert standard AutoCAD Lisp section header",
+    "scope": "autolisp"
   }
 }
+
+

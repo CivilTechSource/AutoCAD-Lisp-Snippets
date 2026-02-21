@@ -30,5 +30,18 @@
     ],
     "description": "Function to check if a layer exists and create it if it doesn't",
     "scope": "autolisp"
+  },
+
+  "Loop Through Selection": {
+    "prefix": "fun-LoopSel",
+    "body": [
+      "(repeat (setq ${1:x} (sslength ${2:ss}))",
+      " (setq ${3:obj} (vlax-ename->vla-object (ssname ${2:ss} (setq ${1:x} (- ${1:x} 1)))))",
+      " ",
+      " )"
+    ],
+    "description": "Insert loop through a selection set",
+    "scope": "autolisp"
   }
 }
+

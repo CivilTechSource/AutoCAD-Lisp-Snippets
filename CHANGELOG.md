@@ -5,12 +5,20 @@ All notable changes to the AutoCAD Lisp Snippets extension will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-# Change Log
+## [1.2.0] - 2026-02-21
 
-All notable changes to the AutoCAD Lisp Snippets extension will be documented in this file.
+### Added
+- **New Function Snippet**: `fun-LoopSel` - Loop through selection set with VLA objects
+  - Efficiently iterate through AutoCAD selection sets
+  - Automatic conversion to VLA objects for ActiveX operations
+  - Ideal for batch processing entities
+- **New Documentation Snippet**: `doc-section` - Standard section header for code organization
+  - Create consistent section dividers in your Lisp code
+  - Improves code readability and structure
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+### Enhanced
+- Improved snippet organization in documentation and functions categories
+- Better code structure for selection set operations
 
 ## [1.1.0] - 2026-01-20
 
